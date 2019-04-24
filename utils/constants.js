@@ -9,6 +9,8 @@ exports.constants = {
     USER_EXISTS: 'El usuario ya se encuentra registrado',
     ERROR_IN_SAVE_USER: 'Ha ocurrido un error al registrar la información',
     USER_NOT_REGISTER: 'No se ha podido registrar el usuario',
-    USER_SUCCESS_STORED: 'Usuario registrado con exito'
+    USER_SUCCESS_STORED: 'Usuario registrado con exito',
+
+    YOUTUBE_LIST_EMPY: 'No se encuentran videos en este momento'
 
 }

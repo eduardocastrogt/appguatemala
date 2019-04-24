@@ -9,4 +9,4 @@ var youtubeSchema = Schema({
     url: String,
 });
 
-module.exports = mongoose.model('User',youtubeSchema);
+module.exports = mongoose.model('Youtube', youtubeSchema);

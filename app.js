@@ -5,18 +5,20 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+//Variables de las rutas
 var userRouter = require('./routes/user');
+var youtubeRouter = require('./routes/youtube');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Configurar cabeceras y cors
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
-	res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-	res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-	res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-	next();
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
 });
 
 /*
@@ -27,6 +29,8 @@ app.get('/test', (req, res) => {
 });
 */
 
+
 app.use('/user', userRouter);
+app.use('/youtube', youtubeRouter);
 
 module.exports = app;
