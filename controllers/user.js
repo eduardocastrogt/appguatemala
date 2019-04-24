@@ -16,7 +16,6 @@ function register(req, res){
     var params = req.body;
     //Comprobando que los datos obligatorios no vengan en blanco
     if(params.name &&  params.lastname && params.email && params.password){
-        console.log('Entro al if')
         //Asignando los valores
         user.name = params.name;
         user.lastname = params.lastname;
@@ -72,7 +71,6 @@ function register(req, res){
         });
     }else{
         //Se devuelve el mensaje de error
-        console.log('Di error');
         res.status(200).send({
             message: constantes.WRONG_PARAMETERS
         });
