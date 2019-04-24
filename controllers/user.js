@@ -2,22 +2,21 @@
 
 //modulos necesarios
 var bcrypt = require('bcrypt-nodejs');
-var jwt = require('../services/jwt');
+//var jwt = require('../services/jwt');
 var fs = require('fs');
 var path = require('path');
 
 var User = require('../models/user');
-var constantes = require('../utils/constants');
+var constantes = require('../utils/constants').constants;
 
 function register(req, res){
     //Instancia de tipo Usuario
     var user = new User();
     //Obteniendo los parametros que vienen en el request
     var params = req.body;
-
     //Comprobando que los datos obligatorios no vengan en blanco
-    if(params.name & params.lastname & params.email & params.password){
-
+    if(params.name &&  params.lastname && params.email && params.password){
+        console.log('Entro al if')
         //Asignando los valores
         user.name = params.name;
         user.lastname = params.lastname;
@@ -57,6 +56,7 @@ function register(req, res){
                                     //El usuario ha sido registrado
                                     res.status(200).send({
                                         message: constantes.USER_SUCCESS_STORED
+                                        //message: 'USUARIO REGISTRADO'
                                     });
                                 }
                             }
@@ -72,8 +72,9 @@ function register(req, res){
         });
     }else{
         //Se devuelve el mensaje de error
+        console.log('Di error');
         res.status(200).send({
-            message: constantes
+            message: constantes.WRONG_PARAMETERS
         });
     }
 }
