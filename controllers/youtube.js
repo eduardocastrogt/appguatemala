@@ -31,6 +31,7 @@ function getYoutubeList(req, res) {
             }
         }
     });
+    db.close();
 }
 
 module.exports = {
