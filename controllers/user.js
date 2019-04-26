@@ -132,7 +132,7 @@ function login(req, res){
                         }
                     } else {
                         res.status(200).send({
-                            message: constantes.LOGIN_FAILED
+                            message: 'false'
                         });
                     }
                 })
