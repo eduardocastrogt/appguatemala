@@ -102,6 +102,48 @@ function getUserList(req, res) {
     });
 }
 
+//Función para el inicio de sesión
+function login(req, res){
+
+    var params = req.body;
+
+    var email = params.email;
+    var password = params.password;
+
+    User.findOne({email: email.toLowerCase()}, (err, check)=>{
+        //Se comprueba el error
+        if(err){
+            res.status(500).send({
+                message: constantes.ERROR_REQUEST
+            });
+        }else{
+            if (issetUser) {
+                bcrypt.compare(password, issetUser.password, (err, check) => {
+                    if (check) {
+                        if (params.gettoken) {
+                            res.status(200).send({
+                                token: jwt.createToken(issetUser)
+                            });
+                        } else {
+                            res.status(200).send({
+                                issetUser
+                            });
+                        }
+                    } else {
+                        res.status(200).send({
+                            message: constants.LOGIN_FAILED
+                        });
+                    }
+                })
+            } else {
+                res.status(404).send({
+                    message: constants.LOGIN_FAILED
+                });
+            }
+        }
+    });
+}
+
 
 module.exports = {
     register,
