@@ -17,8 +17,8 @@ function register(req, res) {
     //Comprobando que los datos obligatorios no vengan en blanco
     if (params.name && params.lastname && params.email && params.password) {
         //Asignando los valores
-        user.name = params.name;
-        user.lastname = params.lastname;
+        user.name = params.name.toUpperCase();
+        user.lastname = params.lastname.toUpperCase();
         user.email = params.email.toLowerCase();
         user.image = null;
         user.typeauthentication = 'USUARIO_EMAIL'
@@ -110,7 +110,7 @@ function login(req, res){
     var email = params.email;
     var password = params.password;
 
-    User.findOne({email: email.toLowerCase()}, (err, check)=>{
+    User.findOne({email: email.toLowerCase()}, (err, issetUser)=>{
         //Se comprueba el error
         if(err){
             res.status(500).send({
@@ -147,5 +147,6 @@ function login(req, res){
 
 module.exports = {
     register,
-    getUserList
+    getUserList,
+    login
 }
