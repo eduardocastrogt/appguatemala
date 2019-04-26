@@ -83,13 +83,13 @@ function getUserList(req, res) {
         //Se comprueba el error
         if (error) {
             res.status(500).send({
-                message: constants.ERROR_REQUEST
+                message: constantes.ERROR_REQUEST
             });
         } else {
             //Se comprueba que la lista no este vacia
             if (!user || user.length == 0) {
                 res.status(404).send({
-                    message: constants.YOUTUBE_LIST_EMPY
+                    message: constantes.YOUTUBE_LIST_EMPY
                 });
             } else {
                 //Se regresan los elementos
@@ -132,13 +132,13 @@ function login(req, res){
                         }
                     } else {
                         res.status(200).send({
-                            message: constants.LOGIN_FAILED
+                            message: constantes.LOGIN_FAILED
                         });
                     }
                 })
             } else {
                 res.status(404).send({
-                    message: constants.LOGIN_FAILED
+                    message: constantes.LOGIN_FAILED
                 });
             }
         }
