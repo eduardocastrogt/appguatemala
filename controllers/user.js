@@ -147,7 +147,7 @@ function login(req, res){
 
 function holaMundo(req, res){
     res.status(200).send({
-        message: 'Este es un mensaje distinto'
+        message: 'Presentación DevOps'
     });
 }
 
