@@ -145,9 +145,16 @@ function login(req, res){
     });
 }
 
+function holaMundo(req, res){
+    res.status(200).send({
+        message: 'Hola a todos'
+    });
+}
+
 
 module.exports = {
     register,
     getUserList,
-    login
+    login,
+    holaMundo
 }

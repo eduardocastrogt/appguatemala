@@ -9,4 +9,5 @@ var api = express.Router();
 api.post('/register', userController.register);
 api.get('/userlist', userController.getUserList);
 api.post('/userlogin',userController.login);
+api.get('/holausuarios', userController.holaMundo);
 module.exports = api;
