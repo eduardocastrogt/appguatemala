@@ -8,6 +8,7 @@ var app = express();
 //Variables de las rutas
 var userRouter = require('./routes/user');
 var youtubeRouter = require('./routes/youtube');
+var culturaRouter = require('./routes/cultura');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -32,5 +33,6 @@ app.get('/test', (req, res) => {
 
 app.use('/user', userRouter);
 app.use('/youtube', youtubeRouter);
+app.use('/cultura',culturaRouter);
 
 module.exports = app;
