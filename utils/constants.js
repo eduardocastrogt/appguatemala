@@ -3,7 +3,8 @@
 exports.constants = {
 
     USER_NOT_REGISTER: 'El usuario no se ha podido registrar',
-
+    GENERIC_NOT_REGISTER: 'No se ha podido registrar la información',
+    SAVE_INFORMATION: 'Se ha guardado la información correctamente',
     WRONG_PARAMETERS: 'Parametros incorrectos',
     ERROR_REQUEST: 'Hubo un error al momento de realizar la peticion',
     USER_EXISTS: 'El usuario ya se encuentra registrado',
