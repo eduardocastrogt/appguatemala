@@ -26,7 +26,7 @@ function addCultura(req, res){
                 });
             }else{
                 //Se comprueba que no se haya registrado la información
-                if(!!culturaStored){
+                if(!culturaStored){
                     res.status(404).send({
                         message: constantes.GENERIC_NOT_REGISTER
                     });
