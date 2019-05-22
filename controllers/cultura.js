@@ -53,8 +53,34 @@ function addCultura(req, res){
     }
 }
 
+function getCulturaList(req, res){
+    Cultura.find({}).exec((error, user) => {
+        //Se comprueba el error
+        if (error) {
+            res.status(500).send({
+                message: constantes.ERROR_REQUEST
+            });
+        } else {
+            //Se comprueba que la lista no este vacia
+            if (!user || user.length == 0) {
+                res.status(404).send({
+                    message: constantes.YOUTUBE_LIST_EMPY
+                });
+            } else {
+                //Se regresan los elementos
+                res.status(200).send({
+                    //total: `${youtube.length}`,
+                    user
+                });
+            }
+        }
+    });
+}
+
+
 //Exportación de las funciones
 
 module.exports = {
-    addCultura
+    addCultura,
+    getCulturaList
 }

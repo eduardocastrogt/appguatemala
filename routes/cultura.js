@@ -7,6 +7,7 @@ var api = express.Router();
 
 //Rutas de acceso
 api.post('/addcultura', culturaController.addCultura);
+api.get('/culturalist', culturaController.getCulturaList);
 
 //Exportando el modulo
 module.exports = api;
