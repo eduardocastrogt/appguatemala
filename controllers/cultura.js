@@ -69,9 +69,7 @@ function getCulturaList(req, res){
             } else {
                 //Se regresan los elementos
                 res.status(200).send({
-                    //total: `${youtube.length}`,
-                    title: cultura.title,
-                    id: cultura.id
+                    cultura
                 });
             }
         }
