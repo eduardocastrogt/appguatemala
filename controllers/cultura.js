@@ -20,7 +20,11 @@ function addCultura(req, res){
         cultura.description = params.description;
 
         //Este campo es opcional
-        cultura.image = params.image;
+        if(params.image.length > 0){
+            cultura.image = params.image
+        }else{
+            cultura.image = '-';
+        }
 
         cultura.save((err, culturaStored) => {
             if(err){
