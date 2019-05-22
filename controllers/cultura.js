@@ -19,7 +19,7 @@ function addCultura(req, res){
         cultura.department = params.department;
         cultura.description = params.description;
 
-        cultura.save(err, culturaStored => {
+        cultura.save((err, culturaStored) => {
             if(err){
                 res.status(500).send({
                     message: constantes.GENERIC_NOT_REGISTER
