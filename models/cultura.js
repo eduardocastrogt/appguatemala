@@ -1,9 +1,9 @@
 'use strict'
 
 var mongoose = require('mongoose');
-var schema = moongoose.Schema;
+var Schema = moongoose.Schema;
 
-var culturaSchema = Schena({
+var culturaSchema = Schema({
     title: String,
     department: String,
     description: String
