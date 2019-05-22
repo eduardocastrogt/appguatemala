@@ -19,6 +19,9 @@ function addCultura(req, res){
         cultura.department = params.department;
         cultura.description = params.description;
 
+        //Este campo es opcional
+        cultura.image = params.image;
+
         cultura.save((err, culturaStored) => {
             if(err){
                 res.status(500).send({
