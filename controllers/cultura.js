@@ -54,7 +54,7 @@ function addCultura(req, res){
 }
 
 function getCulturaList(req, res){
-    Cultura.find({}).exec((error, user) => {
+    Cultura.find({}).exec((error, cultura) => {
         //Se comprueba el error
         if (error) {
             res.status(500).send({
@@ -62,7 +62,7 @@ function getCulturaList(req, res){
             });
         } else {
             //Se comprueba que la lista no este vacia
-            if (!user || user.length == 0) {
+            if (!cultura || cultura.length == 0) {
                 res.status(404).send({
                     message: constantes.YOUTUBE_LIST_EMPY
                 });
@@ -70,7 +70,8 @@ function getCulturaList(req, res){
                 //Se regresan los elementos
                 res.status(200).send({
                     //total: `${youtube.length}`,
-                    user
+                    title: cultura.title,
+                    id: cultura.id
                 });
             }
         }
