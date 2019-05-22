@@ -4,7 +4,7 @@ var Cultura = require('../models/cultura');
 var constantes = require('../utils/constants').constants;
 
 
-function addCultura(res, req){
+function addCultura(req, <button type="reset" class="btn btn-primary">Reset</button>){
     //Instancia para el modelo cultura
     var cultura = new Cultura();
 
