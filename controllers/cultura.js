@@ -68,8 +68,11 @@ function getCulturaList(req, res){
                 });
             } else {
                 //Se regresan los elementos
+                var valor1 = cultura.titla;
+                var valor2 = cultura.id;
                 res.status(200).send({
-                    cultura
+                    valor1,
+                    valor2
                 });
             }
         }
